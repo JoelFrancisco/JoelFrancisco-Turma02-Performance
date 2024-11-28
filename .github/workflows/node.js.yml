@@ -17,5 +17,8 @@ jobs:
         uses: grafana/setup-k6-action@v1.1.0
       - name: Run local k6 test
         uses: grafana/run-k6-action@v1.1.3
+        env:
+          USERNAME: ${{ secrets.USERNAME }}
+          PASSWORD: ${{ secrets.PASSWORD }}
         with:
           path: src/tests
